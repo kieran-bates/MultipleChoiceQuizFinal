@@ -12,6 +12,14 @@
 
 public class MultipleChoiceGUI extends javax.swing.JFrame {
 
+    String input; //Declare a String variable for user input
+    int counter = 0; //Declare a question counter variable for the next button code
+    int counter2 = 0; //Declare a question counter variable for the submit button code
+    int score = 0; //Declare a variable for the score
+    int questionsIncorrect; //Declare a variable for the number of incorrect questions
+    double percentCorrect; //Declare a double variable for the raw percent of correct answers
+    double percentCorrectRounded; //Declare a double variable for the rounded percent of correct answers
+    
     /**
      * Creates new form MultipleChoiceGUI
      */
@@ -344,14 +352,7 @@ public class MultipleChoiceGUI extends javax.swing.JFrame {
     private void answerFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_answerFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_answerFieldActionPerformed
-    String input; //Declare a String variable for user input
-    int counter = 0; //Declare a question counter variable for the next button code
-    int counter2 = 0; //Declare a question counter variable for the submit button code
-    int score = 0; //Declare a variable for the score
-    int questionsIncorrect; //Declare a variable for the number of incorrect questions
-    double percentCorrect; //Declare a double variable for the raw percent of correct answers
-    double percentCorrectRounded; //Declare a double variable for the rounded percent of correct answers
-
+    
     /**
      * @param args the command line arguments
      */
