@@ -19,6 +19,7 @@ public class MultipleChoiceGUI extends javax.swing.JFrame {
     int questionsIncorrect; //Declare a variable for the number of incorrect questions
     double percentCorrect; //Declare a double variable for the raw percent of correct answers
     double percentCorrectRounded; //Declare a double variable for the rounded percent of correct answers
+    final double percentDecimalValue = 10000; //Declare a value that determines how many decimal places the final score is rounded to
     
     /**
      * Creates new form MultipleChoiceGUI
@@ -199,39 +200,39 @@ public class MultipleChoiceGUI extends javax.swing.JFrame {
             nextButton.setEnabled(false); //disable the next button
             submitButton.setEnabled(true); //enable the submit button
         }
-        else if (counter2 == 2) //If the second question has been answered
+        else if (counter2 == 2) //If the second question has been answered follow the same process
         {
             questionField.setText("What is the \ncapital of the US?");
-            counter = counter + 1; //Advance the question counter
-            answerField.setText(""); //Clear the answer field
-            instantOutput.setText(""); //clear the label that displays "correct" or "incorrect
-            nextButton.setEnabled(false); //disable the next button
-            submitButton.setEnabled(true); //enable the submit button
+            counter = counter + 1; 
+            answerField.setText(""); 
+            instantOutput.setText(""); 
+            nextButton.setEnabled(false); 
+            submitButton.setEnabled(true); 
         }
-        else if (counter2 == 3) //If the third question has been answered
+        else if (counter2 == 3) //If the third question has been answered follow the same process
         {
             questionField.setText("What is the \ncapital of China?");
-            counter = counter + 1; //Advance the question counter
-            answerField.setText(""); //Clear the answer field
-            instantOutput.setText(""); //clear the label that displays "correct" or "incorrect
-            nextButton.setEnabled(false); //disable the next button
-            submitButton.setEnabled(true); //enable the submit button
+            counter = counter + 1; 
+            answerField.setText("");
+            instantOutput.setText(""); 
+            nextButton.setEnabled(false); 
+            submitButton.setEnabled(true); 
         }
-        else if (counter2 == 4) //If the fourth question has been answered
+        else if (counter2 == 4) //If the fourth question has been answered follow the same process
         {
             questionField.setText("What is the \ncapital of Japan?");
-            counter = counter + 1; //Advance the question counter
-            answerField.setText(""); //Clear the answer field
-            instantOutput.setText(""); //clear the label that displays "correct" or "incorrect
-            nextButton.setEnabled(false); //disable the next button
-            submitButton.setEnabled(true); //enable the submit button
+            counter = counter + 1; 
+            answerField.setText(""); 
+            instantOutput.setText(""); 
+            nextButton.setEnabled(false); 
+            submitButton.setEnabled(true); 
         }
         else if (counter2 == 5) //If the fifth question has been answered
         {
-            questionsIncorrect = 5 - score; //calculate the number of incorrect questions
+            questionsIncorrect = 5 - score; 
             percentCorrect = score; //transfer the final number of correct questions to a double variable
             percentCorrect = (percentCorrect / 5); //divide number of correct answers by five
-            percentCorrect = percentCorrect * 10000; //multiply the quotient by 10000
+            percentCorrect = percentCorrect * percentDecimalValue; //multiply the quotient by 10000
             percentCorrectRounded = Math.round(percentCorrect); //round the product
             percentCorrectRounded = percentCorrectRounded / 100; //divide the product by 100 to give a final percent of correct answers
             questionField.setText("You got " +score+ " questions correct. \nYou got " +questionsIncorrect+ " questions incorrect."); //Print the number of correct ans number of incorrect questions to the question field
@@ -263,88 +264,88 @@ public class MultipleChoiceGUI extends javax.swing.JFrame {
             }
         }
 
-        else if (counter == 1) //If the second question has been asked
+        else if (counter == 1) //If the second question has been asked follow the same process
         {
-            input = answerField.getText(); //store the user input in a String variable
-            scoreField.setText(String.valueOf(score)); //print the score in the scorefield
-            if (input.equals("Toronto") || input.equals("toronto") || input.equals("TORONTO")) //If the answer is correct
+            input = answerField.getText(); 
+            scoreField.setText(String.valueOf(score)); 
+            if (input.equals("Toronto") || input.equals("toronto") || input.equals("TORONTO")) 
             {
-                score = (score + 1); //Increase the score by one
-                scoreField.setText(String.valueOf(score)); //Print the score to the scorefield
-                instantOutput.setText("Correct!"); //Display "Correct!" on the screen
-                nextButton.setEnabled(true); //Enable the the next button
-                submitButton.setEnabled(false); //Disable the submit button
-                counter2 = counter2 + 1; //Increase the question counter by one
+                score = (score + 1); 
+                scoreField.setText(String.valueOf(score));
+                instantOutput.setText("Correct!"); 
+                nextButton.setEnabled(true); 
+                submitButton.setEnabled(false); 
+                counter2 = counter2 + 1; 
             }
-            else //if the anser is incorrect
+            else //if the anser is incorrect follow the same process
             {
-                instantOutput.setText("Incorrect!"); //Display "Incorrect" on the screen
-                nextButton.setEnabled(true); //Enable the next button
-                submitButton.setEnabled(false); //Disable the submit button
-                counter2 = counter2 + 1; //Increase the question counter by one
+                instantOutput.setText("Incorrect!"); 
+                nextButton.setEnabled(true); 
+                submitButton.setEnabled(false); 
+                counter2 = counter2 + 1; 
             }
         }
-        else if (counter == 2) //If the third question has been asked
+        else if (counter == 2) //If the third question has been asked follow the same process
         {
-            input = answerField.getText(); //store the user input in a String variable
-            scoreField.setText(String.valueOf(score)); //print the score in the scorefield
-            if (input.equals("Washington DC") || input.equals("washington dc") || input.equals("WASHINGTON DC") || input.equals("washington DC")) //If the answer is correct
+            input = answerField.getText(); 
+            scoreField.setText(String.valueOf(score)); 
+            if (input.equals("Washington DC") || input.equals("washington dc") || input.equals("WASHINGTON DC") || input.equals("washington DC")) 
             {
-                score = (score + 1); //Increase the score by one
-                scoreField.setText(String.valueOf(score)); //Print the score to the scorefield
-                instantOutput.setText("Correct!"); //Display "Correct!" on the screen
-                nextButton.setEnabled(true); //Enable the the next button
-                submitButton.setEnabled(false); //Disable the submit button
-                counter2 = counter2 + 1; //Increase the question counter by one
+                score = (score + 1); 
+                scoreField.setText(String.valueOf(score)); 
+                instantOutput.setText("Correct!"); 
+                nextButton.setEnabled(true); 
+                submitButton.setEnabled(false); 
+                counter2 = counter2 + 1; 
             }
-            else //If the anser is incorrect
+            else //If the anser is incorrect follow the same process
             {
-                instantOutput.setText("Incorrect!"); //Display "Incorrect" on the screen
-                nextButton.setEnabled(true); //Enable the next button
-                submitButton.setEnabled(false); //Disable the submit button
-                counter2 = counter2 + 1; //Increase the question counter by one
+                instantOutput.setText("Incorrect!"); 
+                nextButton.setEnabled(true); 
+                submitButton.setEnabled(false); 
+                counter2 = counter2 + 1; 
             }
         }
-        else if (counter == 3) //If the fourth question has been asked
+        else if (counter == 3) //If the fourth question has been asked follow the same process
         {
-            input = answerField.getText(); //store the user input in a String variable
-            scoreField.setText(String.valueOf(score)); //print the score in the scorefield
-            if (input.equals("Beijing") || input.equals("beijing") || input.equals("BEIJING")) //If the answer is correct
+            input = answerField.getText(); 
+            scoreField.setText(String.valueOf(score)); 
+            if (input.equals("Beijing") || input.equals("beijing") || input.equals("BEIJING")) 
             {
-                score = (score + 1); //Increase the score by one
-                scoreField.setText(String.valueOf(score)); //Print the score to the scorefield
-                instantOutput.setText("Correct!"); //Display "Correct!" on the screen
-                nextButton.setEnabled(true); //Enable the the next button
-                submitButton.setEnabled(false); //Disable the submit button
-                counter2 = counter2 + 1; //Increase the question counter by one
+                score = (score + 1); 
+                scoreField.setText(String.valueOf(score)); 
+                instantOutput.setText("Correct!"); 
+                nextButton.setEnabled(true); 
+                submitButton.setEnabled(false); 
+                counter2 = counter2 + 1; 
             }
-            else //If the answer is incorrect
+            else //If the answer is incorrect follow the same process
             {
-                instantOutput.setText("Incorrect!"); //Display "Incorrect" on the screen
-                nextButton.setEnabled(true); //Enable the next button
-                submitButton.setEnabled(false); //Disable the submit button
-                counter2 = counter2 + 1; //Increase the question counter by one
+                instantOutput.setText("Incorrect!"); 
+                nextButton.setEnabled(true); 
+                submitButton.setEnabled(false); 
+                counter2 = counter2 + 1; 
             }
         }
-        else if (counter == 4) //If the fifth question has been asked
+        else if (counter == 4) //If the fifth question has been asked follow the same process
         {
-            input = answerField.getText(); //store the user input in a String variable
-            scoreField.setText(String.valueOf(score)); //Print the score to the scorefield
-            if (input.equals("Tokyo") || input.equals("tokyo") || input.equals("TOKYO")) //If the answer is correct
+            input = answerField.getText(); 
+            scoreField.setText(String.valueOf(score)); 
+            if (input.equals("Tokyo") || input.equals("tokyo") || input.equals("TOKYO")) 
             {
-                score = (score + 1); //Increase the score by one
-                scoreField.setText(String.valueOf(score)); //Print the score to the scorefield
-                instantOutput.setText("Correct!"); //Display "Correct!" on the screen
-                nextButton.setEnabled(true); //Enable the the next button
-                submitButton.setEnabled(false); //Disable the submit button
-                counter2 = counter2 + 1; //Increase the question counter by one
+                score = (score + 1); 
+                scoreField.setText(String.valueOf(score)); 
+                instantOutput.setText("Correct!"); 
+                nextButton.setEnabled(true); 
+                submitButton.setEnabled(false); 
+                counter2 = counter2 + 1; 
             }
-            else //If the answer is incorrect
+            else //If the answer is incorrect follow the same process
             {
-                instantOutput.setText("Incorrect!"); //Display "Incorrect" on the screen
-                nextButton.setEnabled(true); //Enable the next button
-                submitButton.setEnabled(false); //Disable the submit button
-                counter2 = counter2 + 1; //Increase the question counter by one
+                instantOutput.setText("Incorrect!"); 
+                nextButton.setEnabled(true); 
+                submitButton.setEnabled(false); 
+                counter2 = counter2 + 1; 
             }
         }
     }//GEN-LAST:event_submitButtonActionPerformed
